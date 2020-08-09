@@ -33,12 +33,19 @@ public class PlayerStats : MonoBehaviour
         playerStatUI = FindObjectOfType<PlayerStatUI>();        
     }
 
-    public void AddToStat(int stat, int amount)
+    public void AddToStat(int stat, int amount, int level)
     {
-        stat += amount;
+        level += amount;
         playerStatUI.RefreshStatBlock();
+        CheckLevel(stat, level);
     }
 
-
+    void CheckLevel(int stat, int level)
+    {
+        if(level >= 100)
+        {
+            stat = stat + 1;
+        }
+    }
 
 }
