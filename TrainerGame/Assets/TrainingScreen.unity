@@ -793,7 +793,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &266217941
 GameObject:
@@ -806,6 +806,7 @@ GameObject:
   - component: {fileID: 266217942}
   - component: {fileID: 266217944}
   - component: {fileID: 266217943}
+  - component: {fileID: 266217945}
   m_Layer: 5
   m_Name: Nutrition
   m_TagString: Untagged
@@ -869,6 +870,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266217941}
   m_CullTransparentMesh: 0
+--- !u!114 &266217945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266217941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451af480182cb104cad85890284c0125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainingModality: Training Modality
+  changePowerBy: 25
+  changeTechniqueBy: 0
+  changeEnduranceBy: 50
+  changeConditioningBy: -10
+  trainingComplete: 0
 --- !u!1 &330214635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 82.76, y: -66.8}
+  m_AnchoredPosition: {x: 81, y: -71.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472930198
@@ -1581,6 +1600,7 @@ GameObject:
   - component: {fileID: 477387688}
   - component: {fileID: 477387687}
   - component: {fileID: 477387686}
+  - component: {fileID: 477387690}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1682,13 +1702,33 @@ RectTransform:
   - {fileID: 66141135}
   - {fileID: 1268321907}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &477387690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477387685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ad64950261da644880e4d9a3d68c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerStat: {fileID: 40202872}
+  techniqueStat: {fileID: 934127448}
+  enduranceStat: {fileID: 1912028899}
+  conditioningStat: {fileID: 1458137598}
+  powerGauge: {fileID: 1977978350}
+  techniqueGauge: {fileID: 544406926}
+  enduranceGauge: {fileID: 186875367}
+  conditionGauge: {fileID: 1268321908}
 --- !u!1 &513089228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,6 +2348,8 @@ GameObject:
   - component: {fileID: 959675057}
   - component: {fileID: 959675059}
   - component: {fileID: 959675058}
+  - component: {fileID: 959675060}
+  - component: {fileID: 959675061}
   m_Layer: 5
   m_Name: StrengthTraining
   m_TagString: Untagged
@@ -2371,6 +2413,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959675056}
   m_CullTransparentMesh: 0
+--- !u!114 &959675060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959675056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451af480182cb104cad85890284c0125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainingModality: Training Modality
+  changePowerBy: 50
+  changeTechniqueBy: -10
+  changeEnduranceBy: 0
+  changeConditioningBy: 25
+  trainingComplete: 0
+--- !u!114 &959675061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959675056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 959675058}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 959675060}
+        m_MethodName: Train
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &969782104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,6 +2570,7 @@ GameObject:
   - component: {fileID: 1150671674}
   - component: {fileID: 1150671676}
   - component: {fileID: 1150671675}
+  - component: {fileID: 1150671677}
   m_Layer: 5
   m_Name: Technique
   m_TagString: Untagged
@@ -2519,6 +2634,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150671673}
   m_CullTransparentMesh: 0
+--- !u!114 &1150671677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150671673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451af480182cb104cad85890284c0125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainingModality: Training Modality
+  changePowerBy: -10
+  changeTechniqueBy: 50
+  changeEnduranceBy: 25
+  changeConditioningBy: 0
+  trainingComplete: 0
 --- !u!1 &1177908804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,6 +2893,7 @@ GameObject:
   - component: {fileID: 1258195457}
   - component: {fileID: 1258195459}
   - component: {fileID: 1258195458}
+  - component: {fileID: 1258195460}
   m_Layer: 5
   m_Name: Rest
   m_TagString: Untagged
@@ -2823,6 +2957,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258195456}
   m_CullTransparentMesh: 0
+--- !u!114 &1258195460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258195456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451af480182cb104cad85890284c0125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainingModality: Training Modality
+  changePowerBy: 0
+  changeTechniqueBy: -10
+  changeEnduranceBy: 25
+  changeConditioningBy: 50
+  trainingComplete: 0
 --- !u!1 &1268321906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,7 +3061,7 @@ GameObject:
   - component: {fileID: 1458137599}
   - component: {fileID: 1458137598}
   m_Layer: 5
-  m_Name: EnduranceAmount (1)
+  m_Name: ConditioningAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3220,6 +3372,7 @@ GameObject:
   - component: {fileID: 1517648531}
   - component: {fileID: 1517648533}
   - component: {fileID: 1517648532}
+  - component: {fileID: 1517648534}
   m_Layer: 5
   m_Name: Conditioning
   m_TagString: Untagged
@@ -3283,6 +3436,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517648530}
   m_CullTransparentMesh: 0
+--- !u!114 &1517648534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517648530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451af480182cb104cad85890284c0125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainingModality: Training Modality
+  changePowerBy: -10
+  changeTechniqueBy: 0
+  changeEnduranceBy: 25
+  changeConditioningBy: 50
+  trainingComplete: 0
 --- !u!1 &1555446597
 GameObject:
   m_ObjectHideFlags: 0
@@ -3357,6 +3528,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555446597}
   m_CullTransparentMesh: 0
+--- !u!1001 &1711129805
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 794431546635339510, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 923.61755
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 521.8885
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481664392544716403, guid: 5fb62433198e079478ab88839e289478,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5fb62433198e079478ab88839e289478, type: 3}
 --- !u!1 &1761406254
 GameObject:
   m_ObjectHideFlags: 0
@@ -4412,6 +4652,7 @@ GameObject:
   - component: {fileID: 2138818769}
   - component: {fileID: 2138818771}
   - component: {fileID: 2138818770}
+  - component: {fileID: 2138818772}
   m_Layer: 5
   m_Name: SetPR
   m_TagString: Untagged
@@ -4475,3 +4716,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138818768}
   m_CullTransparentMesh: 0
+--- !u!114 &2138818772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138818768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451af480182cb104cad85890284c0125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trainingModality: Training Modality
+  changePowerBy: 25
+  changeTechniqueBy: 25
+  changeEnduranceBy: -10
+  changeConditioningBy: 25
+  trainingComplete: 0
