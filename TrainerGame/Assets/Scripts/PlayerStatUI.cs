@@ -23,7 +23,7 @@ public class PlayerStatUI : MonoBehaviour
     public TextMeshProUGUI fatigueStat;
     public Sprite[] emojis;
 
-    private Image currentEmoji;
+    public Image currentEmoji;
 
     private PlayerStats playerStats;
 
