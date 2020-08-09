@@ -11,6 +11,8 @@ public class Training : MonoBehaviour
     public float changeEnduranceBy = 0;
     public float changeConditioningBy = 0;
 
+    public int changeFatigueBy = 0;
+
     private PlayerStats playerStats;
     private PlayerStatUI playerStatUI;
 
@@ -52,6 +54,8 @@ public class Training : MonoBehaviour
                 playerStats.conditioning += 1;
                 playerStats.conditioningLevel = 0;
             }
+
+            playerStats.fatigue += changeFatigueBy;
 
             playerStatUI.RefreshStatBlock();
 
