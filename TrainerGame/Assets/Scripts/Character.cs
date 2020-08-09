@@ -21,20 +21,26 @@ public class Character : MonoBehaviour
     public TextMeshProUGUI enduranceText;
     public TextMeshProUGUI conditioningText;
 
+    void Awake()
+    {
+        characterNameText.text = CharacterName;
+
+        powerText.text = startingPower.ToString();
+        techniqueText.text = startingTechnique.ToString();
+        enduranceText.text = startingEndurance.ToString();
+        conditioningText.text = startingConditioning.ToString();
+    }
+
 
     public void SelectCharacter()
     {
-        characterNameText.text = CharacterName;
 
         PlayerStats.Instance.power = startingPower;
         PlayerStats.Instance.technique = startingTechnique;
         PlayerStats.Instance.endurance = startingEndurance;
         PlayerStats.Instance.conditioning = startingConditioning;
 
-        powerText.text = startingPower.ToString();
-        techniqueText.text  = startingTechnique.ToString();
-        enduranceText.text = startingEndurance.ToString();
-        conditioningText.text = startingConditioning.ToString();
+
 
     }
 
