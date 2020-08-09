@@ -43,7 +43,9 @@ public class PlayerStatUI : MonoBehaviour
         powerGauge.fillAmount = playerStats.powerLevel / 100;
         techniqueGauge.fillAmount = playerStats.techniqueLevel / 100;
         enduranceGauge.fillAmount = playerStats.enduranceLevel / 100;
-        conditionGauge.fillAmount = playerStats.conditioningLevel / 100;      
+        conditionGauge.fillAmount = playerStats.conditioningLevel / 100;
+
+        CheckFatigueLeve();
 
     }
 
