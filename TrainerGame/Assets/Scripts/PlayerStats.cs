@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     public int enduranceLevel = 0;
     public int conditioning = 1;
     public int conditioningLevel = 0;
+
 
     [Header("Player Conditions")]
     public int fatigue = 0;
@@ -46,6 +48,7 @@ public class PlayerStats : MonoBehaviour
         {
             stat = stat + 1;
         }
+        level = 0;
     }
 
 }
