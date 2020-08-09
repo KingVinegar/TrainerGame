@@ -9,13 +9,13 @@ public class PlayerStats : MonoBehaviour
 {
     [Header ("Player Stats")]
     public int power = 1;
-    public int powerLevel = 0;
+    public float powerLevel = 0;
     public int technique = 1;
-    public int techniqueLevel = 0;
+    public float techniqueLevel = 0;
     public int endurance = 1;
-    public int enduranceLevel = 0;
+    public float enduranceLevel = 0;
     public int conditioning = 1;
-    public int conditioningLevel = 0;
+    public float conditioningLevel = 0;
 
 
     [Header("Player Conditions")]
@@ -35,20 +35,22 @@ public class PlayerStats : MonoBehaviour
         playerStatUI = FindObjectOfType<PlayerStatUI>();        
     }
 
-    public void AddToStat(int stat, int amount, int level)
+    public void AddToStat(int stat, int amount, float level)
     {
+        Debug.Log(stat + " changed by " + amount);
         level += amount;
-        playerStatUI.RefreshStatBlock();
         CheckLevel(stat, level);
     }
 
-    void CheckLevel(int stat, int level)
+    public void CheckLevel(int stat, float level)
     {
         if(level >= 100)
         {
             stat = stat + 1;
+            level = 0;
         }
-        level = 0;
+
+
     }
 
 }
