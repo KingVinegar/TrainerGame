@@ -6,13 +6,16 @@ public class Event : MonoBehaviour
 {
     private PlayerStats playerStats;
 
-    private float timeRan;
+    public float timeRan;
     public float eventMaxTime;
     public float eventMinTime;
+
+    private EventUI eventUI;
 
     void Awake()
     {
         playerStats = FindObjectOfType<PlayerStats>();
+        eventUI = FindObjectOfType<EventUI>();
     
     }
 
@@ -25,6 +28,8 @@ public class Event : MonoBehaviour
         Debug.Log("Stats Factor equals " + statsFactor);
         Debug.Log("Fatigue Factor equals " + fatigueFactor);
         Debug.Log("Time ran = " + timeRan);
+
+        eventUI.UpdateEventUI();
 
     }
 }
