@@ -55,7 +55,7 @@ public class PlayerStatUI : MonoBehaviour
 
         fatigueStat.text = fatigue.ToString();
 
-        currentEmoji.sprite = emojis[fatigue - 1];
+        currentEmoji.sprite = emojis[fatigue];
     }
 }
 
