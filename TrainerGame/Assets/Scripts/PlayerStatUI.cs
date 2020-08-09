@@ -53,6 +53,15 @@ public class PlayerStatUI : MonoBehaviour
     {
         int fatigue = playerStats.fatigue;
 
+        if(fatigue <= 0)
+        {
+            fatigue = 0;
+        }
+        if(fatigue >= 10)
+        {
+            fatigue = 10;
+        }
+
         fatigueStat.text = fatigue.ToString();
 
         currentEmoji.sprite = emojis[fatigue];
