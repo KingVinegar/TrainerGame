@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -19,9 +20,16 @@ public class PlayerStats : MonoBehaviour
 
     public int mood = 1;
 
-    public void AddToStat(int stat, int amount)
+   
+    public TextMeshProUGUI powerStat;             
+    public TextMeshProUGUI techniqueStat;    
+    public TextMeshProUGUI enduranceStat;    
+    public TextMeshProUGUI conditioningStat;
+
+    public void AddToStat(int stat, int amount, TextMeshProUGUI statText)
     {
         stat += amount;
+        statText.text = amount.ToString();
     }
 
 
