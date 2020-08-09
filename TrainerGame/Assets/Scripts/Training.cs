@@ -20,10 +20,10 @@ public class Training : MonoBehaviour
 
     public void Train()
     {
-        playerStats.AddToStat(playerStats.power, changePowerBy, playerStats.powerStat);
-        playerStats.AddToStat(playerStats.technique, changeTechniqueBy, playerStats.techniqueStat);
-        playerStats.AddToStat(playerStats.endurance, changeEnduranceBy, playerStats.enduranceStat);
-        playerStats.AddToStat(playerStats.conditioning, changeConditioningBy, playerStats.conditioningStat);
+        playerStats.AddToStat(playerStats.power, changePowerBy);
+        playerStats.AddToStat(playerStats.technique, changeTechniqueBy);
+        playerStats.AddToStat(playerStats.endurance, changeEnduranceBy);
+        playerStats.AddToStat(playerStats.conditioning, changeConditioningBy);
 
     }
 

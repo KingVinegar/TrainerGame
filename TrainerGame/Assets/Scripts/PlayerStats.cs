@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -20,17 +21,20 @@ public class PlayerStats : MonoBehaviour
 
     public int mood = 1;
 
-   
-    public TextMeshProUGUI powerStat;             
-    public TextMeshProUGUI techniqueStat;    
-    public TextMeshProUGUI enduranceStat;    
-    public TextMeshProUGUI conditioningStat;
+    private PlayerStatUI playerStatUI;
 
-    public void AddToStat(int stat, int amount, TextMeshProUGUI statText)
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        playerStatUI = FindObjectOfType<PlayerStatUI>();        
+    }
+
+    public void AddToStat(int stat, int amount)
     {
         stat += amount;
-        statText.text = amount.ToString();
+        playerStatUI.RefreshStatBlock();
     }
+
 
 
 }
