@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TrainingScreen.unity
+    guid: 593c54b962f34f14e88e90ae103d6148
+  - enabled: 1
+    path: Assets/Scenes/EventScreen.unity
+    guid: c2905f2adc06c654c8cc0b09ffeb3fe5
   m_configObjects: {}
