@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EventScreen.unity
     guid: c2905f2adc06c654c8cc0b09ffeb3fe5
+  - enabled: 1
+    path: Assets/Scenes/NewAthlete.unity
+    guid: 088e8a139e6762344a82e7d9cde878c6
   m_configObjects: {}
