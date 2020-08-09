@@ -27,15 +27,31 @@ public class Training : MonoBehaviour
         if(trainingComplete == false)
         {
             playerStats.powerLevel += changePowerBy;
-            playerStats.CheckLevel(playerStats.power, playerStats.powerLevel);
+            if(playerStats.powerLevel >= 100)
+            {
+                playerStats.power += 1;
+                playerStats.powerLevel = 0;
+            }
             playerStats.techniqueLevel += changeTechniqueBy;
-            playerStats.CheckLevel(playerStats.technique, playerStats.techniqueLevel);
+            if (playerStats.techniqueLevel >= 100)
+            {
+                playerStats.technique += 1;
+                playerStats.techniqueLevel = 0;
+            }
 
             playerStats.enduranceLevel += changeEnduranceBy;
-            playerStats.CheckLevel(playerStats.endurance, playerStats.enduranceLevel);
+            if (playerStats.enduranceLevel >= 100)
+            {
+                playerStats.endurance += 1;
+                playerStats.enduranceLevel = 0;
+            }
 
             playerStats.conditioningLevel += changeConditioningBy;
-            playerStats.CheckLevel(playerStats.conditioning, playerStats.conditioningLevel);
+            if (playerStats.conditioningLevel >= 100)
+            {
+                playerStats.conditioning += 1;
+                playerStats.conditioningLevel = 0;
+            }
 
             playerStatUI.RefreshStatBlock();
 
