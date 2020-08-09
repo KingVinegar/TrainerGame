@@ -23,6 +23,10 @@ public class PlayerStats : MonoBehaviour
 
     private PlayerStatUI playerStatUI;
 
+    private void Awake()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
