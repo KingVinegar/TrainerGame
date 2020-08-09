@@ -20,7 +20,7 @@ public class Training : MonoBehaviour
 
     void Awake()
     {
-        playerStats = FindObjectOfType<PlayerStats>();
+        playerStats = PlayerStats.Instance;
         playerStatUI = FindObjectOfType<PlayerStatUI>();
     }
 

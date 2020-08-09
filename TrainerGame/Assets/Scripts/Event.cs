@@ -14,7 +14,7 @@ public class Event : MonoBehaviour
 
     void Awake()
     {
-        playerStats = FindObjectOfType<PlayerStats>();
+        playerStats = PlayerStats.Instance;
         eventUI = FindObjectOfType<EventUI>();
     
     }

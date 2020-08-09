@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+
+    public static PlayerStats Instance { get; private set; }
+
     [Header ("Player Stats")]
     public int power = 1;
     public float powerLevel = 0;
@@ -23,24 +26,20 @@ public class PlayerStats : MonoBehaviour
 
     public int mood = 1;
 
-    private PlayerStatUI playerStatUI;
 
     private void Awake()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        playerStatUI = FindObjectOfType<PlayerStatUI>();        
-    }
-
-    public void AddToStat(int stat, int amount, float level)
-    {
-        Debug.Log(stat + " changed by " + amount);
-        level += amount;
-        CheckLevel(stat, level);
-    }
 
     public void CheckLevel(int stat, float level)
     {

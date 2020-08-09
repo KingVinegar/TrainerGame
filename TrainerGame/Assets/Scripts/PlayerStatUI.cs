@@ -29,7 +29,8 @@ public class PlayerStatUI : MonoBehaviour
 
     void Awake()
     {
-        playerStats = FindObjectOfType<PlayerStats>();
+        playerStats = PlayerStats.Instance;
+
         RefreshStatBlock();
     }
 
