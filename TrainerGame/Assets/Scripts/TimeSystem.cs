@@ -13,7 +13,7 @@ public class TimeSystem : MonoBehaviour
     public TextMeshProUGUI monthText;
     public TextMeshProUGUI yearText;
 
-    public static double dayNumber, dayOfWeek, month, year;
+    public static int dayNumber, dayOfWeek, month, year;
     public string dayOfWeekName;
 
 
