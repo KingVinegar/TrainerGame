@@ -9,9 +9,9 @@ public class TimeSystem : MonoBehaviour
 
 {
     public TextMeshProUGUI dayNumberText;
-    public TextMeshProUGUI dayOfWeekText;
+   // public TextMeshProUGUI dayOfWeekText;
     public TextMeshProUGUI monthText;
-    public TextMeshProUGUI yearText;
+    //public TextMeshProUGUI yearText;
 
     public static int dayNumber, dayOfWeek, month, year;
     public string dayOfWeekName;
@@ -25,15 +25,16 @@ public class TimeSystem : MonoBehaviour
         dayOfWeek = 1;
         month = 8;
         year = 2020;
+        TextCallFunction();
     }
 
 
     void TextCallFunction()
     {
         dayNumberText.text = dayNumber.ToString();
-        dayOfWeekText.text = dayOfWeekName;
+        //dayOfWeekText.text = dayOfWeekName;
         monthText.text = month.ToString();
-        yearText.text = year.ToString();
+        //yearText.text = year.ToString();
     }
 
     public void CalculateDay()
