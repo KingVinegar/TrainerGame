@@ -17,6 +17,7 @@ public class CalendarManager : MonoBehaviour
     [SerializeField]
     private GameObject[] daysOnGrid;
 
+  
 
 
     private void PopulateCalendarDays()
@@ -44,6 +45,21 @@ public class CalendarManager : MonoBehaviour
         currentMonth = months[0];
         currentMonthText.text = currentMonth.nameOfMonth;
         PopulateCalendarDays();
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < daysOnGrid.Length; i++)
+        {
+            if(daysOnGrid[i].GetComponent<Day>().dayOfTheMonth == TimeSystem.dayNumber)
+            {
+                daysOnGrid[i].GetComponentInChildren<Image>().color = Color.blue;
+            }
+            else
+            {
+                daysOnGrid[i].GetComponentInChildren<Image>().color = Color.white;
+            }
+        }
     }
 
 }
