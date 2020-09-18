@@ -10,14 +10,22 @@ public class Day : MonoBehaviour
     private TextMeshProUGUI dayText;
 
     [SerializeField]
-    private int dayOfTheMonth;
+    public int dayOfTheMonth;
 
     [SerializeField]
     private Image eventImage;
 
     private void Start()
     {
-        dayText.text = dayOfTheMonth.ToString();
+        
+        if(dayOfTheMonth > 0)
+        {
+            dayText.text = dayOfTheMonth.ToString();
+        }
+        else
+        {
+            dayText.text = "";
+        }
 
 
     }
