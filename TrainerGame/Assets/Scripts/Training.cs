@@ -18,6 +18,9 @@ public class Training : MonoBehaviour
 
     public bool trainingComplete = false;
 
+    [SerializeField]
+    private AnimationClip animationClip;
+
     void Awake()
     {
         playerStats = PlayerStats.Instance;
