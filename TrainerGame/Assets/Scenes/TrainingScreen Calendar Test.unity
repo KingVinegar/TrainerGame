@@ -1946,7 +1946,8 @@ MonoBehaviour:
   changeConditioningBy: -10
   changeFatigueBy: -1
   trainingComplete: 0
-  animationClip: {fileID: 0}
+  playableDirector: {fileID: 1111949037}
+  trainingTimeline: {fileID: 0}
 --- !u!114 &266217946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8125,7 +8126,8 @@ MonoBehaviour:
   changeConditioningBy: 25
   changeFatigueBy: 2
   trainingComplete: 0
-  animationClip: {fileID: 7400000, guid: b443215d8aa1d224d88c21884fda4836, type: 2}
+  playableDirector: {fileID: 1111949037}
+  trainingTimeline: {fileID: 11400000, guid: cddc152bdc0b4a247875f1b7e0660d82, type: 2}
 --- !u!114 &959675061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9214,7 +9216,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 7f9326f6203eb5740b00a105342144a9, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -9632,7 +9634,8 @@ MonoBehaviour:
   changeConditioningBy: 0
   changeFatigueBy: 1
   trainingComplete: 0
-  animationClip: {fileID: 7400000, guid: 37a64609c782660468b022268fafbd68, type: 2}
+  playableDirector: {fileID: 1111949037}
+  trainingTimeline: {fileID: 11400000, guid: 7f9326f6203eb5740b00a105342144a9, type: 2}
 --- !u!114 &1150671678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10332,7 +10335,8 @@ MonoBehaviour:
   changeConditioningBy: 50
   changeFatigueBy: -2
   trainingComplete: 0
-  animationClip: {fileID: 0}
+  playableDirector: {fileID: 1111949037}
+  trainingTimeline: {fileID: 0}
 --- !u!114 &1258195461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11831,7 +11835,8 @@ MonoBehaviour:
   changeConditioningBy: 50
   changeFatigueBy: 2
   trainingComplete: 0
-  animationClip: {fileID: 0}
+  playableDirector: {fileID: 1111949037}
+  trainingTimeline: {fileID: 0}
 --- !u!114 &1517648535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15616,7 +15621,8 @@ MonoBehaviour:
   changeConditioningBy: 25
   changeFatigueBy: 1
   trainingComplete: 0
-  animationClip: {fileID: 0}
+  playableDirector: {fileID: 1111949037}
+  trainingTimeline: {fileID: 0}
 --- !u!114 &2138818773
 MonoBehaviour:
   m_ObjectHideFlags: 0

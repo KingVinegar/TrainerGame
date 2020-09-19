@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class Training : MonoBehaviour
 {
@@ -19,7 +21,10 @@ public class Training : MonoBehaviour
     public bool trainingComplete = false;
 
     [SerializeField]
-    private AnimationClip animationClip;
+    private PlayableDirector playableDirector;
+
+    [SerializeField]
+    private PlayableAsset trainingTimeline;
 
     void Awake()
     {
@@ -63,7 +68,8 @@ public class Training : MonoBehaviour
             playerStatUI.RefreshStatBlock();
 
             //trainingComplete = true;
-            //TODO run training animation
+            playableDirector.playableAsset = trainingTimeline;
+            playableDirector.Play();
             //TODO open dialogue box that prompts player to move onto the next day
         }
         else
