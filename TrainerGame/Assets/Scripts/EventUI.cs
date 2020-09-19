@@ -9,16 +9,17 @@ public class EventUI : MonoBehaviour
     
         public TextMeshProUGUI playerTimeText;
 
-    private Event eventTimes;
+    private RaceEvent eventTimes;
 
     void Awake()
     { 
-        eventTimes = FindObjectOfType<Event>();
+        eventTimes = FindObjectOfType<RaceEvent>();
+        eventTimes.updateEventUI += UpdateEventUI;
     }
 
     public void UpdateEventUI()
     {
-        playerTimeText.text = eventTimes.timeRan.ToString();
+        playerTimeText.text = eventTimes.timeRan.ToString("0.000");
     }
 }
 

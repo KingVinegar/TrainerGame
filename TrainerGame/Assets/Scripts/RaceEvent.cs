@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Event : MonoBehaviour
+public class RaceEvent : MonoBehaviour
 {
     private PlayerStats playerStats;
 
@@ -11,6 +11,9 @@ public class Event : MonoBehaviour
     public float eventMinTime;
 
     private EventUI eventUI;
+
+    public delegate void UpdateEventUI();
+    public UpdateEventUI updateEventUI;
 
     void Awake()
     {
@@ -29,7 +32,7 @@ public class Event : MonoBehaviour
         Debug.Log("Fatigue Factor equals " + fatigueFactor);
         Debug.Log("Time ran = " + timeRan);
 
-        eventUI.UpdateEventUI();
+        updateEventUI.Invoke();
 
     }
 }
