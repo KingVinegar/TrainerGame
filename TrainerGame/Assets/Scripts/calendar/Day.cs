@@ -12,13 +12,11 @@ public class Day : MonoBehaviour
     [SerializeField]
     public int dayOfTheMonth;
 
-    [SerializeField]
-    private Image eventImage;
+    public Image eventImage;
 
-    private void Start()
+    public void UpdateDayText()
     {
-        
-        if(dayOfTheMonth > 0)
+        if (dayOfTheMonth > 0)
         {
             dayText.text = dayOfTheMonth.ToString();
         }
@@ -26,8 +24,5 @@ public class Day : MonoBehaviour
         {
             dayText.text = "";
         }
-
-
     }
-
 }

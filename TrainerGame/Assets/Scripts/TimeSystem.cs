@@ -8,6 +8,8 @@ using System;
 public class TimeSystem : MonoBehaviour
 
 {
+    public static TimeSystem Instance { get; private set; }
+
     public TextMeshProUGUI dayNumberText;
    // public TextMeshProUGUI dayOfWeekText;
     public TextMeshProUGUI monthText;
@@ -16,7 +18,21 @@ public class TimeSystem : MonoBehaviour
     public static int dayNumber, dayOfWeek, month, year;
     public string dayOfWeekName;
 
+    public delegate void UpdateDay();
+    public UpdateDay updateDay;
 
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +42,7 @@ public class TimeSystem : MonoBehaviour
         month = 8;
         year = 2020;
         TextCallFunction();
+        updateDay.Invoke();
     }
 
 
@@ -33,7 +50,6 @@ public class TimeSystem : MonoBehaviour
     {
         dayNumberText.text = dayNumber.ToString();
         //dayOfWeekText.text = dayOfWeekName;
-        monthText.text = month.ToString();
         //yearText.text = year.ToString();
     }
 
@@ -52,6 +68,7 @@ public class TimeSystem : MonoBehaviour
         }
 
         TextCallFunction();
+        updateDay.Invoke();
     }
 
     void CalculateMonth()
@@ -81,6 +98,46 @@ public class TimeSystem : MonoBehaviour
             month++;
             dayNumber = 1;
             TextCallFunction();
+        }
+
+        switch (month)
+        {
+            case 1:
+                monthText.text = "January";
+                break;
+            case 2:
+                monthText.text = "Februay";
+                break;
+            case 3:
+                monthText.text = "March";
+                break;
+            case 4:
+                monthText.text = "April";
+                break;
+            case 5:
+                monthText.text = "May";
+                break;
+            case 6:
+                monthText.text = "June";
+                break;
+            case 7:
+                monthText.text = "July";
+                break;
+            case 8:
+                monthText.text = "August";
+                break;
+            case 9:
+                monthText.text = "September";
+                break;
+            case 10:
+                monthText.text = "October";
+                break;
+            case 11:
+                monthText.text = "November";
+                break;
+            case 12:
+                monthText.text = "December";
+                break;
         }
     }
 
