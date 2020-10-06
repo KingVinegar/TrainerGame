@@ -6802,6 +6802,7 @@ MonoBehaviour:
   - {fileID: 2139373223}
   eventObjects:
   - {fileID: 11400000, guid: 9d9a331b22be1ed4c939b49cedc64942, type: 2}
+  - {fileID: 11400000, guid: 08b811883e60a534f81378e267a03381, type: 2}
 --- !u!1 &871850309
 GameObject:
   m_ObjectHideFlags: 0
@@ -9370,6 +9371,8 @@ PlayableDirector:
     value: {fileID: 1111949036}
   - key: {fileID: 4745812181859814917, guid: cddc152bdc0b4a247875f1b7e0660d82, type: 2}
     value: {fileID: 1111949036}
+  - key: {fileID: 5332098882922738229, guid: 7f9326f6203eb5740b00a105342144a9, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &1115319456

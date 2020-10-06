@@ -71,14 +71,25 @@ public class Training : MonoBehaviour
             playableDirector.playableAsset = trainingTimeline;
             playableDirector.Play();
             //TODO open dialogue box that prompts player to move onto the next day
+            playableDirector.stopped += TrainingComplete;
+
+            playableDirector.stopped -= TrainingComplete;
+
+            if (playableDirector.playableGraph.IsDone())
+            {
+                trainingComplete = true;
+            }
         }
         else
         {
             Debug.Log("Training already complete for today.");
         }
+    }
 
-
-
+    private void TrainingComplete(PlayableDirector playableDirector)
+    {
+        trainingComplete = true;
+        Debug.Log(playableDirector.name + " has stopped");
     }
 
 }
