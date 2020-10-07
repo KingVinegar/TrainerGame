@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -19,6 +20,12 @@ public class CalendarManager : MonoBehaviour
 
     [SerializeField]
     private EventObject[] eventObjects;
+
+
+    private void SortEventObjectsByDate()
+    {
+        eventObjects = eventObjects.OrderBy(a => a.month).ThenBy(a => a.day).ToArray();
+    }
 
     private void PopulateCalendarDays()
     {
@@ -54,6 +61,7 @@ public class CalendarManager : MonoBehaviour
         currentMonthText.text = currentMonth.nameOfMonth;
         PopulateCalendarDays();
         TrackCalendarDay();
+        SortEventObjectsByDate();
     }
 
 
