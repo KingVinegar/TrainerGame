@@ -29,6 +29,7 @@ public class CalendarManager : MonoBehaviour
 
     private void PopulateCalendarDays()
     {
+        ClearCalendarDays();
         for (int i = 0; i < daysOnGrid.Length; i++) //There are 42 slots in a 7 x 6 calendar grid
         {
             if (i < (currentMonth.firstDayOfTheMonth - 1) || ((1 + i - (currentMonth.firstDayOfTheMonth - 1)) > currentMonth.daysInMonth))
@@ -46,12 +47,17 @@ public class CalendarManager : MonoBehaviour
                     daysOnGrid[i].GetComponent<Day>().eventImage.sprite = eventObjects[j].icon;
                     Debug.Log("new event called");
                 }
-                else if(currentMonth.monthNumber == eventObjects[j].month)
-                {
-                    daysOnGrid[i].GetComponent<Day>().eventImage.sprite = null;
-                }
+
             }
             daysOnGrid[i].GetComponent<Day>().UpdateDayText();
+        }
+    }
+
+    private void ClearCalendarDays()
+    {
+        for (int i = 0;  i < daysOnGrid.Length ; i++)
+        {
+            daysOnGrid[i].GetComponent<Day>().eventImage.sprite = null;
         }
     }
 

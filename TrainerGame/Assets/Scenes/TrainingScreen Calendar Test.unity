@@ -6801,10 +6801,11 @@ MonoBehaviour:
   - {fileID: 924342099}
   - {fileID: 2139373223}
   eventObjects:
-  - {fileID: 11400000, guid: 9d9a331b22be1ed4c939b49cedc64942, type: 2}
+  - {fileID: 11400000, guid: 3bc5710594e3c8c4ebf6e0362a968657, type: 2}
   - {fileID: 11400000, guid: 08b811883e60a534f81378e267a03381, type: 2}
   - {fileID: 11400000, guid: cf6b5c72662b7d240a41125ad4f1957c, type: 2}
   - {fileID: 11400000, guid: 2e63f75bbbfd6bb4bb9ce5f1c0295554, type: 2}
+  - {fileID: 11400000, guid: 9d9a331b22be1ed4c939b49cedc64942, type: 2}
 --- !u!1 &871850309
 GameObject:
   m_ObjectHideFlags: 0
