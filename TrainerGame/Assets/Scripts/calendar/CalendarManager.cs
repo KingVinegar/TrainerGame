@@ -21,6 +21,10 @@ public class CalendarManager : MonoBehaviour
     [SerializeField]
     private EventObject[] eventObjects;
 
+    //Next Meet info
+    private EventObject nextRace;
+    [SerializeField]
+    private TextMeshProUGUI NextMeetText;
 
     private void SortEventObjectsByDate()
     {
@@ -51,6 +55,7 @@ public class CalendarManager : MonoBehaviour
             }
             daysOnGrid[i].GetComponent<Day>().UpdateDayText();
         }
+        NextEvent();
     }
 
     private void ClearCalendarDays()
@@ -111,6 +116,20 @@ public class CalendarManager : MonoBehaviour
             if (eventObjects[i].day == TimeSystem.dayNumber && eventObjects[i].month == TimeSystem.month)
             {
                 //Trigger Event
+            }
+        }
+    }
+
+    private void NextEvent()
+    {
+        for (int i = 0; i < eventObjects.Length; i++)
+        {
+            if(eventObjects[i].GetType() == typeof(RaceMeet))
+            {
+                nextRace = eventObjects[i];
+                Debug.Log("Next race is at " + eventObjects[i].month + "-" + eventObjects[i].day);
+                NextMeetText.text = eventObjects[i].title + " " + eventObjects[i].month.ToString() + "-" + eventObjects[i].day.ToString();
+                return;
             }
         }
     }
