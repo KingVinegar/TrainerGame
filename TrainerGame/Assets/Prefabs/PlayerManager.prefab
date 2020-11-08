@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5481664392544716403}
   - component: {fileID: 8587556252289040140}
+  - component: {fileID: 511283391496234263}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -53,7 +54,15 @@ MonoBehaviour:
   conditioningLevel: 0
   fatigue: 0
   mood: 1
-  powerStat: {fileID: 0}
-  techniqueStat: {fileID: 0}
-  enduranceStat: {fileID: 0}
-  conditioningStat: {fileID: 0}
+--- !u!114 &511283391496234263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794431546635339510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85a13da8a47a84bb258a1f221dbb66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
