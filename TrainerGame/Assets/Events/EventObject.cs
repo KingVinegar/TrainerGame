@@ -10,5 +10,6 @@ public class EventObject : ScriptableObject
     public Sprite icon;
     public int month;
     public int day;
+    public bool hasHappened = false;
 
 }

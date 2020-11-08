@@ -31,6 +31,11 @@ public class CalendarManager : MonoBehaviour
         eventObjects = eventObjects.OrderBy(a => a.month).ThenBy(a => a.day).ToArray();
     }
 
+    private void SortMonths()
+    {
+        months = months.OrderBy(a => a.monthNumber).ToArray();
+    }
+
     private void PopulateCalendarDays()
     {
         ClearCalendarDays();
@@ -73,6 +78,7 @@ public class CalendarManager : MonoBehaviour
         currentMonth = months[0];
         currentMonthText.text = currentMonth.nameOfMonth;
         SortEventObjectsByDate();
+        SortMonths();
         PopulateCalendarDays();
         TrackCalendarDay();
         
@@ -105,7 +111,7 @@ public class CalendarManager : MonoBehaviour
                 daysOnGrid[i].GetComponentInChildren<Image>().color = Color.white;
             }
         }
-
+        CheckForEvent();
         NextEvent();
 
     }
@@ -117,6 +123,7 @@ public class CalendarManager : MonoBehaviour
             if (eventObjects[i].day == TimeSystem.dayNumber && eventObjects[i].month == TimeSystem.month)
             {
                 //Trigger Event
+                eventObjects[i].hasHappened = true;
             }
         }
     }
@@ -125,12 +132,15 @@ public class CalendarManager : MonoBehaviour
     {
         for (int i = 0; i < eventObjects.Length; i++)
         {
-            if(eventObjects[i].GetType() == typeof(RaceMeet) && eventObjects[i].month >= currentMonth.monthNumber && eventObjects[i].day >= TimeSystem.dayNumber)
+            if(eventObjects[i].GetType() == typeof(RaceMeet) && eventObjects[i].month >= currentMonth.monthNumber)
             {
-                nextRace = eventObjects[i];
-                Debug.Log("Next race is at " + eventObjects[i].month + "-" + eventObjects[i].day);
-                NextMeetText.text = eventObjects[i].title + " " + eventObjects[i].month.ToString() + "-" + eventObjects[i].day.ToString();
-                return;
+                if (eventObjects[i].hasHappened == false)
+                {
+                    nextRace = eventObjects[i];
+                    Debug.Log("Next race is at " + eventObjects[i].month + "-" + eventObjects[i].day);
+                    NextMeetText.text = eventObjects[i].title + " " + eventObjects[i].month.ToString() + "-" + eventObjects[i].day.ToString();
+                    return;
+                }
             }
         }
     }
