@@ -44,8 +44,9 @@ public class CalendarManager : MonoBehaviour
                 if (daysOnGrid[i].GetComponent<Day>().dayOfTheMonth == eventObjects[j].day && currentMonth.monthNumber == eventObjects[j].month)
                 {
                     daysOnGrid[i].GetComponent<Day>().eventImage.sprite = eventObjects[j].icon;
+                    Debug.Log("new event called");
                 }
-                else
+                else if(currentMonth.monthNumber == eventObjects[j].month)
                 {
                     daysOnGrid[i].GetComponent<Day>().eventImage.sprite = null;
                 }
@@ -59,9 +60,10 @@ public class CalendarManager : MonoBehaviour
         TimeSystem.Instance.updateDay += TrackCalendarDay;
         currentMonth = months[0];
         currentMonthText.text = currentMonth.nameOfMonth;
+        SortEventObjectsByDate();
         PopulateCalendarDays();
         TrackCalendarDay();
-        SortEventObjectsByDate();
+        
     }
 
 
