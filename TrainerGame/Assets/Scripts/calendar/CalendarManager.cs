@@ -105,7 +105,7 @@ public class CalendarManager : MonoBehaviour
             }
         }
 
-
+        NextEvent();
 
     }
 
@@ -124,7 +124,7 @@ public class CalendarManager : MonoBehaviour
     {
         for (int i = 0; i < eventObjects.Length; i++)
         {
-            if(eventObjects[i].GetType() == typeof(RaceMeet))
+            if(eventObjects[i].GetType() == typeof(RaceMeet) && eventObjects[i].month >= currentMonth.monthNumber && eventObjects[i].day >= TimeSystem.dayNumber)
             {
                 nextRace = eventObjects[i];
                 Debug.Log("Next race is at " + eventObjects[i].month + "-" + eventObjects[i].day);
