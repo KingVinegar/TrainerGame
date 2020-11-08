@@ -66,8 +66,9 @@ public class CalendarManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
+        GetComponent<Canvas>().enabled = false;
         TimeSystem.Instance.updateDay += TrackCalendarDay;
         currentMonth = months[0];
         currentMonthText.text = currentMonth.nameOfMonth;
@@ -131,6 +132,18 @@ public class CalendarManager : MonoBehaviour
                 NextMeetText.text = eventObjects[i].title + " " + eventObjects[i].month.ToString() + "-" + eventObjects[i].day.ToString();
                 return;
             }
+        }
+    }
+
+    public void ToggleCanvas()
+    {
+        if (GetComponent<Canvas>().enabled)
+        {
+            GetComponent<Canvas>().enabled = false;
+        }
+        else
+        {
+            GetComponent<Canvas>().enabled = true;
         }
     }
 
